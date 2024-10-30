@@ -16,6 +16,7 @@
                   <th scope="col">Nazionalità</th>
                   <th scope="col">Data</th>
                   <th scope="col">Voto</th>
+                  <th scope="col">Bottoni</th>
                 </tr>
               </thead>
               <tbody>
@@ -28,6 +29,14 @@
                         <td>{{ $movie->nationality }}</td>
                         <td>{{ $movie->date }}</td>
                         <td>{{ $movie->vote }}</td>
+                        <td>
+                            <button class="btn btn-primary">Mostra</button>
+                            <button class="btn btn-success">Edita</button>
+
+                            <form action="" class="d-inline">
+                                <button class="btn btn-danger">Cancella</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
 
