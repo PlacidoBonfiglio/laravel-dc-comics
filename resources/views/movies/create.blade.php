@@ -1,6 +1,6 @@
 @extends("layouts.app")
 
-@section("page-title", "Laravel Comics")
+@section("page-title", "Laravel Comics Create")
 
 @section("main-content")
     <section class="container">
@@ -25,7 +25,7 @@
             </div>
 
             <div class="text-center">
-                <button class="btn btn-primary me-3" type="submit">Crea Film</button>
+                <button class="btn btn-primary me-3" type="submit">Modifica Film</button>
                 <button class="btn btn-warning" type="reset">Reset</button>
             </div>
         </form>

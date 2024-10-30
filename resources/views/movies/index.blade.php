@@ -1,11 +1,15 @@
 @extends("layouts.app")
 
-@section("page-title", "Laravel Comics")
+@section("page-title", "Laravel Comics Index")
 
 @section("main-content")
     <section class="container">
 
         <h2 class="text-center mb-5">Lista dei Film</h2>
+
+        <div>
+            <button class="btn btn-primary mb-4 fw-bold">Aggiungi Film +</button>
+        </div>
 
         <table class="table table-dark table-hover">
             <thead>
@@ -30,11 +34,11 @@
                         <td>{{ $movie->date }}</td>
                         <td>{{ $movie->vote }}</td>
                         <td>
-                            <button class="btn btn-primary">Mostra</button>
-                            <button class="btn btn-success">Edita</button>
+                            <a href="{{ route("movies.show", $movie->id) }}" class="btn btn-primary">Mostra</a>
+                            <a href="/edit" class="btn btn-success">Modifica</a>
 
                             <form action="" class="d-inline">
-                                <button class="btn btn-danger">Cancella</button>
+                                <a href="/delete" class="btn btn-danger">Cancella</a>
                             </form>
                         </td>
                     </tr>
