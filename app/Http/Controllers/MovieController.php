@@ -16,4 +16,23 @@ class MovieController extends Controller
         $movie = Movie::findOrFail($id);
         return view ("movies.show", compact("movie"));
     }
+
+    public function create() {
+        return view("movies.create");
+    }
+
+    public function store(Request $request, string $id) {
+        $movieData = $request->all();
+
+        // $movie = new Movie();
+        // $movie->title = $movieData["title"];
+        // $movie->original_title = $movieData["original_title"];
+        // $movie->nationality = $movieData["nationality"];
+        // $movie->date = $movieData["date"];
+        // $movie->vote = $movieData["vote"];
+
+
+        // ! $movie = Movie::create($movieData); NON funziona
+        return redirect()->route("movies");
+    }
 }

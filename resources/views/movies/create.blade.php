@@ -5,27 +5,34 @@
 @section("main-content")
     <section class="container">
 
-        <h2 class="text-center mb-3">Inserisci i dati di un nuovo Film</h2>
+        <h2 class="text-center mb-3">Aggiungi i dati di un nuovo Film</h2>
 
-        <form class="row row-cols-1 justify-content-center" action="">
+        <form class="row row-cols-1 justify-content-center" action="{{ route("movies.store") }}" method="post">
+            @method("PUT")
+            @csrf
+
             <div class="col-6 m-3">
-                <input class="form-control" type="text" placeholder="Inserisci Titolo" aria-label="default input example">
+                <input class="form-control" type="text" placeholder="Inserisci Titolo" aria-label="default input example" id="film-name" name="title">
             </div>
 
             <div class="col-6 m-3">
-                <input class="form-control" type="text" placeholder="Inserisci Titolo Originale" aria-label="default input example">
+                <input class="form-control" type="text" placeholder="Inserisci Titolo Originale" aria-label="default input example" id="film-original-name" name="original_title">
             </div>
 
             <div class="col-6 m-3">
-                <input class="form-control" type="text" placeholder="Inserisci Nazionalità" aria-label="default input example">
+                <input class="form-control" type="text" placeholder="Inserisci Nazionalità" aria-label="default input example" id="film-nationality" name="nationality">
             </div>
 
             <div class="col-6 m-3 mb-4">
-                <input class="form-control" type="text" placeholder="Inserisci Data" aria-label="default input example">
+                <input class="form-control" type="text" placeholder="Inserisci Data" aria-label="default input example" id="film-data" name="date">
+            </div>
+
+            <div class="col-6 m-3 mb-4">
+                <input class="form-control" type="text" placeholder="Inserisci Voto" aria-label="default input example" id="film-vote" name="vote">
             </div>
 
             <div class="text-center">
-                <button class="btn btn-primary me-3" type="submit">Modifica Film</button>
+                <button class="btn btn-primary me-3" type="submit">Aggiungi Nuovo Film</button>
                 <button class="btn btn-warning" type="reset">Reset</button>
             </div>
         </form>

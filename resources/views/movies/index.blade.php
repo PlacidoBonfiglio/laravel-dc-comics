@@ -8,7 +8,7 @@
         <h2 class="text-center mb-5">Lista dei Film</h2>
 
         <div>
-            <button class="btn btn-primary mb-4 fw-bold">Aggiungi Film +</button>
+            <a href="{{ route("movies.create") }}" class="btn btn-primary mb-4 fw-bold">Aggiungi Film +</a>
         </div>
 
         <table class="table table-dark table-hover">
