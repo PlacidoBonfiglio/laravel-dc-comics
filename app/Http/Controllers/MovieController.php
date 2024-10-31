@@ -21,18 +21,18 @@ class MovieController extends Controller
         return view("movies.create");
     }
 
-    public function store(Request $request, string $id) {
+    public function store(Request $request) {
         $movieData = $request->all();
 
-        // $movie = new Movie();
-        // $movie->title = $movieData["title"];
-        // $movie->original_title = $movieData["original_title"];
-        // $movie->nationality = $movieData["nationality"];
-        // $movie->date = $movieData["date"];
-        // $movie->vote = $movieData["vote"];
+        $movie = new Movie();
+        $movie->title = $movieData["title"];
+        $movie->original_title = $movieData["original_title"];
+        $movie->nationality = $movieData["nationality"];
+        $movie->date = $movieData["date"];
+        $movie->vote = $movieData["vote"];
+        $movie->save();
 
-
-        // ! $movie = Movie::create($movieData); NON funziona
+        //$movie = Movie::create($movieData);
         return redirect()->route("movies");
     }
 }
