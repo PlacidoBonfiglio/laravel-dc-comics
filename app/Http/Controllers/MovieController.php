@@ -24,15 +24,15 @@ class MovieController extends Controller
     public function store(Request $request) {
         $movieData = $request->all();
 
-        $movie = new Movie();
-        $movie->title = $movieData["title"];
-        $movie->original_title = $movieData["original_title"];
-        $movie->nationality = $movieData["nationality"];
-        $movie->date = $movieData["date"];
-        $movie->vote = $movieData["vote"];
-        $movie->save();
+        // $movie = new Movie();
+        // $movie->title = $movieData["title"];
+        // $movie->original_title = $movieData["original_title"];
+        // $movie->nationality = $movieData["nationality"];
+        // $movie->date = $movieData["date"];
+        // $movie->vote = $movieData["vote"];
+        // $movie->save();
 
-        //$movie = Movie::create($movieData);
+        $movie = Movie::create($movieData);
         return redirect()->route("movies");
     }
 }
