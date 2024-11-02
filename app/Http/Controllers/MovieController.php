@@ -52,6 +52,15 @@ class MovieController extends Controller
         $movie->vote = $movieData["vote"];
         $movie->update();
 
+        // $movie->update($movieData); FILLABLE
+
+        return redirect()->route("movies");
+    }
+
+    public function destroy(string $id) {
+        $movie = Movie::findOrFail($id);
+
+        $movie->delete();
         return redirect()->route("movies");
     }
 }
