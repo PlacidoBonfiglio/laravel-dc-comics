@@ -37,7 +37,7 @@
                             <a href="{{ route("movies.show", $movie->id) }}" class="btn btn-primary">Mostra</a>
                             <a href="{{ route("movies.edit", $movie->id) }}" class="btn btn-success">Modifica</a>
 
-                            <form action="{{ route("movies.delete", $movie->id) }}" method="POST" class="d-inline">
+                            <form action="{{ route("movies.delete", $movie->id) }}" method="POST" class="d-inline env-destroyer" custom-data-name="{{ $movie->name }}">
                                 @method("DELETE")
                                 @csrf
                                 <button href="/delete" type="submit" class="btn btn-danger">Rimuovi</button>
@@ -50,4 +50,8 @@
         </table>
 
     </section>
+@endsection
+
+@section("additional-scripts")
+    @vite("resources/js/movies/delete-confirmation.js")
 @endsection
