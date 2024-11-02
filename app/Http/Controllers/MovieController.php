@@ -35,4 +35,9 @@ class MovieController extends Controller
         $movie = Movie::create($movieData);
         return redirect()->route("movies");
     }
+
+    public function edit(string $id) {
+        $movie = Movie::findOrFail($id);
+        return view("movies.edit", compact("movies"));
+    }
 }
