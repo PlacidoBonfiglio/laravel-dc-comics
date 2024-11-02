@@ -37,7 +37,7 @@
                             <a href="{{ route("movies.show", $movie->id) }}" class="btn btn-primary">Mostra</a>
                             <a href="{{ route("movies.edit", $movie->id) }}" class="btn btn-success">Modifica</a>
 
-                            <form action="{{ route("movies.delete", $movie->id) }}" method="POST" class="d-inline env-destroyer" custom-data-name="{{ $movie->name }}">
+                            <form action="{{ route("movies.delete", $movie->id) }}" method="POST" class="d-inline env-destroyer" custom-data-name="{{ $movie->title }}">
                                 @method("DELETE")
                                 @csrf
                                 <button href="/delete" type="submit" class="btn btn-danger">Rimuovi</button>
