@@ -38,6 +38,20 @@ class MovieController extends Controller
 
     public function edit(string $id) {
         $movie = Movie::findOrFail($id);
-        return view("movies.edit", compact("movies"));
+        return view("movies.edit", compact("movie"));
+    }
+
+    public function update(Request $request, string $id) {
+        $movieData = $request->all();
+
+        $movie = Movie::findOrFail($id);
+        $movie->title = $movieData["title"];
+        $movie->original_title = $movieData["original_title"];
+        $movie->nationality = $movieData["nationality"];
+        $movie->date = $movieData["date"];
+        $movie->vote = $movieData["vote"];
+        $movie->update();
+
+        return redirect()->route("movies");
     }
 }

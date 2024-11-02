@@ -7,7 +7,7 @@
 
         <h2 class="text-center mb-3">Modifica dati del Film selezionato</h2>
 
-        <form class="row row-cols-1 justify-content-center" action="{{ route("movies.update, $movie->id") }}" method="post">
+        <form class="row row-cols-1 justify-content-center" action="{{ route("movies.update", $movie->id) }}" method="post">
             @method("PUT")
             @csrf
 

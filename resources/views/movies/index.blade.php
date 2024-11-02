@@ -35,7 +35,7 @@
                         <td>{{ $movie->vote }}</td>
                         <td>
                             <a href="{{ route("movies.show", $movie->id) }}" class="btn btn-primary">Mostra</a>
-                            <a href="/edit" class="btn btn-success">Modifica</a>
+                            <a href="{{ route("movies.edit", $movie->id) }}" class="btn btn-success">Modifica</a>
 
                             <form action="" class="d-inline">
                                 <a href="/delete" class="btn btn-danger">Cancella</a>
