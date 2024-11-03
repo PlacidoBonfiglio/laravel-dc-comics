@@ -22,17 +22,26 @@ class MovieController extends Controller
     }
 
     public function store(Request $request) {
+
+        $request->validate([
+            "title" => "required|string|min:4|max:255",
+            "original_title" => "required|string|min:4|max:255",
+            "nationality" => "required|string|min:4|max:255",
+            "date" => "required|date",
+            "vote" => "required|min:1|max:10",
+        ]);
+
         $movieData = $request->all();
 
-        // $movie = new Movie();
-        // $movie->title = $movieData["title"];
-        // $movie->original_title = $movieData["original_title"];
-        // $movie->nationality = $movieData["nationality"];
-        // $movie->date = $movieData["date"];
-        // $movie->vote = $movieData["vote"];
-        // $movie->save();
+        $movie = new Movie();
+        $movie->title = $movieData["title"];
+        $movie->original_title = $movieData["original_title"];
+        $movie->nationality = $movieData["nationality"];
+        $movie->date = $movieData["date"];
+        $movie->vote = $movieData["vote"];
+        $movie->save();
 
-        $movie = Movie::create($movieData);
+        // $movie = Movie::create($movieData); FILLABLE
         return redirect()->route("movies");
     }
 

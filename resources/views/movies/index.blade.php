@@ -20,7 +20,7 @@
                   <th scope="col">Nazionalità</th>
                   <th scope="col">Data</th>
                   <th scope="col">Voto</th>
-                  <th scope="col">Bottoni</th>
+                  <th scope="col"></th>
                 </tr>
               </thead>
               <tbody>
@@ -33,7 +33,7 @@
                         <td>{{ $movie->nationality }}</td>
                         <td>{{ $movie->date }}</td>
                         <td>{{ $movie->vote }}</td>
-                        <td>
+                        <td class="text-center">
                             <a href="{{ route("movies.show", $movie->id) }}" class="btn btn-primary">Mostra</a>
                             <a href="{{ route("movies.edit", $movie->id) }}" class="btn btn-success">Modifica</a>
 

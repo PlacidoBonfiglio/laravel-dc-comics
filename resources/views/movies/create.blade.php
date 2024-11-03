@@ -7,6 +7,18 @@
 
         <h2 class="text-center mb-3">Aggiungi i dati di un nuovo Film</h2>
 
+        @if ( $errors->any() )
+            <div class="alert alert-warning">
+                <ul>
+                    @foreach ( $errors->all() as $error )
+                        <li>
+                            {{ $error }}
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <form class="row row-cols-1 justify-content-center" action="{{ route("movies.store") }}" method="post">
             @csrf
 
